@@ -79,6 +79,7 @@ openai_api_version = os.getenv("OPENAI_API_VERSION")
 Conf_api_key = os.getenv("CONFLUENCES_API_KEY")
 
 # llm = ChatOpenAI(model="gpt-4o-mini", max_tokens=1000, temperature=0)
+
 llm = AzureChatOpenAI(
     openai_api_key=openai_api_key,
     openai_api_version=openai_api_version,
@@ -202,7 +203,7 @@ with gr.Blocks() as demo:
     
     # SCREEN 3: Q&A
     with gr.Column(visible=False) as qa_section:
-        gr.Markdown("## Here happens the real magic ✨")
+        gr.Markdown("## Here comes LLM based Q&A ✨")
         
         with gr.Row():
             question_box = gr.Textbox(label="Ask your question on the data", lines=2, scale=10)
